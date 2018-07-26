@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+
         ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -24,7 +24,6 @@ public class MainActivity extends Activity {
         ImageView img_picasso = (ImageView)findViewById(R.id.img);
         Picasso.with(this)
                 .load(url)
-                .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher_round)
                 .into(img_picasso, new ImageLoadedCallback(progressBar){
                     public void onSuccess(){
